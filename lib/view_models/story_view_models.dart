@@ -13,5 +13,8 @@ class StoryViewModels{
   String get url{
     return story.url;
   }
+  List<int> get commentsId{
+    return story.commentIds;
+  }
 
 }

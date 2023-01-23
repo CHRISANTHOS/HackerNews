@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 
 class StoryList extends StatelessWidget {
 
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -14,6 +16,7 @@ class StoryList extends StatelessWidget {
         itemBuilder: (context, index){
           return ListTile(
             title: Text(vm.stories[index].title),
+            trailing: Text('${vm.stories[index].commentsId.length}'),
           );
         });
   }

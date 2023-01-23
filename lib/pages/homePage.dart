@@ -19,12 +19,15 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-
-    final vm = Provider.of<StoryListViewModel>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Hacker News'),
+        actions: [
+          IconButton(onPressed: (){
+            Provider.of<StoryListViewModel>(context, listen: false).fetchTopStories();
+            // print('done');
+          }, icon: Icon(Icons.refresh))
+        ],
       ),
       body: StoryList(),
     );
