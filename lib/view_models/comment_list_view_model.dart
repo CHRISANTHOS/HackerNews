@@ -3,7 +3,6 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:hackernews/services/web_services.dart';
 import 'package:hackernews/view_models/story_view_models.dart';
-import 'package:hackernews/models/comment.dart';
 import 'comment_view_model.dart';
 
 class CommentListViewModel extends ChangeNotifier{
