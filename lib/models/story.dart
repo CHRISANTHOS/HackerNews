@@ -1,7 +1,7 @@
 class Story {
   final String title;
   final String url;
-  List<int> commentIds = <int>[];
+  List<dynamic> commentIds = <int>[];
 
   Story({required this.title, required this.url, required this.commentIds});
 

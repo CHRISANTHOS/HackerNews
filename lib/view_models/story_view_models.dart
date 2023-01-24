@@ -13,7 +13,7 @@ class StoryViewModels{
   String get url{
     return story.url;
   }
-  List<int> get commentsId{
+  List<dynamic> get commentsId{
     return story.commentIds;
   }
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hackernews/view_models/story_list_view_models.dart';
+import 'package:hackernews/view_models/story_view_models.dart';
 import 'package:provider/provider.dart';
 import 'package:hackernews/widgets/story_list.dart';
+import 'details_page.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -10,6 +12,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
+  void _getDetailsPage(StoryViewModels story, BuildContext context){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(story: story,)));
+  }
 
   @override
   void initState() {
@@ -29,7 +36,9 @@ class _HomePageState extends State<HomePage> {
           }, icon: Icon(Icons.refresh))
         ],
       ),
-      body: StoryList(),
+      body: StoryList(onSelected: (story){
+        _getDetailsPage(story, context);
+      },),
     );
   }
 }
