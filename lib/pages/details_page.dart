@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hackernews/view_models/story_view_models.dart';
 import 'package:provider/provider.dart';
 import 'package:hackernews/view_models/comment_list_view_model.dart';
+import 'package:hackernews/widgets/comment_list.dart';
 
 class DetailsPage extends StatefulWidget {
   StoryViewModels story;
@@ -21,15 +22,13 @@ class _DetailsPageState extends State<DetailsPage> {
   }
   @override
   Widget build(BuildContext context) {
+    final vm = Provider.of<CommentListViewModel>(context);
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.story.title),
       ),
-      body: ListView.builder(itemCount: 10, itemBuilder: (context, index){
-        return ListTile(
-          title: ,
-        );
-      }),
+      body: CommentList(comments: vm.comments),
     );
   }
 }
